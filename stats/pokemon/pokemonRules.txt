@@ -1,0 +1,29 @@
+Lets write a simple card game . . .
+Both players need to have a 60 card deck. 
+No more than 4 of a card, except if it is an energy.
+There are three types of cards, Pokemon, Trianers, and energy
+~~~~~~~
+At the start of the game both palyers draw 7 cards
+if there is no pokemon in your hand you redraw a new hand and the opponent gets 1 free card.
+After this players take 6 prize cards and put them aside.
+Each time you get a kill you get one of your prize cards
+You win when you collect all 6 prizes
+Each palyer takes a turn, onthier turn you can draw a card, put a pokemon into play, put an energy on a pokemon (once per turn),
+play trainers, and attack which ends your turn.
+to attack your pokemon must have energy
+It deals damage to your opponent's hp.
+There are 6 spots on each person's field, one active spot 5 are bench spots. You can have at most 6 pokemon in play at a time,
+but only the active pokemon can attack
+
+Let's get started working on the foundation of the game.
+
+Lets work on the foundation of the game
+Write a card class
+Loop that can fill an array with 60 cards
+Write a loop that can draw 7 cards from the deck. Write an evaluator that determines if there are any pokemon in the hand
+
+How many reshuffles if there is only one pokemon card in the deck?
+
+What if there's 2?
+What if there's 3?
+Write an engine that generates 1-60 pokemon in the deck, and output the odds of having a pokemon in your opening hand.
