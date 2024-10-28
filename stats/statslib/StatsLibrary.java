@@ -54,4 +54,67 @@ public class StatsLibrary
         }
         return (double) currentMostSeenNumber;
     }
+
+    public double standardDev(ArrayList<Integer> numbers)
+    {
+        double sum = 0;
+        double mean;
+        double standardDeviation = 0;
+
+        for (int num : numbers) 
+        {
+            sum += num;
+        }
+        mean = sum / numbers.size();
+
+        for (int num : numbers) 
+        {
+            standardDeviation += Math.pow(num - mean, 2);
+        }
+        return Math.sqrt(standardDeviation / numbers.size());
+    }
+
+    public long factorial(int n)
+    {
+        int product = 1;
+        for(int i = n; i > 1; i--)
+        {
+            product *= i;
+        }
+        return product;
+    }
+
+    public long permutations(int n, int r) //choose r items from n
+    {
+        return factorial(n) / factorial(n-r);
+    }
+
+    public long combinations(int n, int r) //n choose r
+    {
+        return factorial(n) / (factorial(r) * factorial(n-r));
+    }
+
+    public double binomial(double successChance, int trials, int desiredNumberOfSuccesses)
+    {
+        return combinations(trials, desiredNumberOfSuccesses) * 
+        Math.pow(successChance, desiredNumberOfSuccesses) * 
+        Math.pow(1 - successChance, trials-desiredNumberOfSuccesses);
+    }
+
+    public double geometric(double successChance, int value)
+    {
+        return Math.pow(1 - successChance, value - 1) * successChance;
+    }
+
+    public boolean independanceCheck(double a, double b, double anb)
+    {
+        if(a * b - anb < 0.0001)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

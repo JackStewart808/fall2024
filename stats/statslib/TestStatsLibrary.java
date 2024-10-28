@@ -16,6 +16,17 @@ public class TestStatsLibrary
         
 
         System.out.println(tester.computeMode(listOfNumbers));
+        System.out.println(tester.computeMedian(listOfNumbers));
+        System.out.println(tester.computeMean(listOfNumbers));
+        System.out.println(tester.standardDev(listOfNumbers));
+        System.out.println(tester.factorial(5));
+        System.out.println(tester.permutations(5, 2));
+        System.out.println(tester.combinations(5, 2));
+        System.out.println(tester.binomial(.5, 2, 1));
+        System.out.println(tester.geometric(.5, 3));
+        System.out.println(tester.independanceCheck(.5, .5, .25));
+
+
 
     }
 }
