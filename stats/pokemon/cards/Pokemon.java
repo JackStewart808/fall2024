@@ -122,17 +122,11 @@ public class Pokemon extends Card
     //The fundamental attack function that every attacking move calls
     public int attack(Pokemon enemyPokemon, String attackName, double hitRate, int damage, double critChance, int energyReq)
     {
-        //Check if Pokemon has sufficient energy
-        if(energyCount < energyReq)
-        {
-            return -1;
-        }
-
         System.out.println(name + " Attacks With " + attackName);
         //Wait a second to allow the user to read and build a bit of suspense
         try
         {
-            Thread.sleep(500);
+            Thread.sleep(2000);
         }
         catch(InterruptedException e)
         {
@@ -147,17 +141,17 @@ public class Pokemon extends Card
 
         if(hitRoll > hitRate) //Implements Missing
         {
-            System.out.println("The Attack Missed");
+            System.out.println("The Attack Missed!");
             return 0;
         }
         else if(hitRoll < critChance) //Implements Critting
         {
             damage *= 1.5;
-            System.out.print("The Attack Critically Hit For " + damage + "Damage, ");
+            System.out.print("The Attack Critically Hit For " + damage + " Damage");
         }
         else //If neither crit nor miss, 
         {
-            System.out.print("The Attack Hit For " + damage + "Damage");
+            System.out.print("The Attack Hit For " + damage + " Damage");
             
         }
         
@@ -173,6 +167,16 @@ public class Pokemon extends Card
         {
             System.out.println("!");
         }
+
+        try
+        {
+            Thread.sleep(2000);
+        }
+        catch(InterruptedException e)
+        {
+
+        }
+
         return damage;
     }
 

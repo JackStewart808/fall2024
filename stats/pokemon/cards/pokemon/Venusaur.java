@@ -19,7 +19,6 @@ public class Venusaur extends Pokemon
 
     //Pokemon's 4 Attack Options are stored here, attack strength or style is adjusted through the paramaters
     public int attack1(Pokemon enemyPokemon) {  
-        System.out.println("hit2"); 
         return attack(enemyPokemon, attack1Name, .6, 50, .1, 0);
     }
     public int attack2(Pokemon enemyPokemon) {   

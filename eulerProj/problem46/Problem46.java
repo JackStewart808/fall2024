@@ -7,19 +7,44 @@ public class Problem46
 {
     public static void main(String[] args) 
     {
-        try {
-          File myObj = new File("eulerProj/problem46/primes.txt");
-          Scanner myReader = new Scanner(myObj);
-          for(int i = 9; i < 1000000; i+= 2)
+        File myObj = new File("eulerProj/problem46/primes.txt");
+        
+        int currentPrime;
+        boolean matchFound;
+        for(int i = 9; i < 1000000; i+= 2)
         {
-            //TODO check each problem
-        }
+          try
+          {
+            Scanner myReader = new Scanner(myObj);
+            matchFound = false;
+          //Find the smallest prime greater than i
+          currentPrime = 2;
+          while(currentPrime < i)
+          {
+            currentPrime = Integer.valueOf(myReader.nextLine());
+            for(int j = 1; 2 * Math.pow(j,2) + currentPrime <= i; j++)
+            {
+              if(i == 2 * Math.pow(j, 2) + currentPrime)
+              {
+                matchFound = true;
+                break;
+              }
+            }
+            if(matchFound)
+            {
+              break;
+            }
+          }
+          if(!matchFound)
+          {
+            System.out.println(i);
+          }
+          }
+          catch(FileNotFoundException e)
+          {
 
-
-          myReader.close();
-        } catch (FileNotFoundException e) {
-          System.out.println("An error occurred.");
-          e.printStackTrace();
+          }
+          
         }
-    }
-}
+        }
+  }
